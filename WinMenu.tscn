@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://WinMenu.gd" type="Script" id=1]
+[ext_resource path="res://tileUI/MegamaxJonathanToo-YqOq2.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.368627, 0.65098, 0.368627, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.368627, 0.65098, 0.368627, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="WinMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.203922, 0.196078, 0.196078, 0.784314 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 104.0
+margin_top = 56.0
+margin_right = 216.0
+margin_bottom = 124.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "YOU Beat IT!!!"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 112.0
+margin_bottom = 22.0
+
+[node name="HomeBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Home"
+icon_align = 1
+
+[node name="QuitBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 55.0
+margin_right = 112.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "Quit"
+icon_align = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HomeBtn" to="." method="_on_HomeBtn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_QuitBtn_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tileUI/tilemap_packed.png" type="Texture" id=1]
+
+[node name="DoorYouWin" type="Area2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 180, 90, 18, 36 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 6 )
+scale = Vector2( 0.892031, 1.18133 )
+polygon = PoolVector2Array( -10.0893, 10.1581, -10.0893, -6.77204, -7.84726, -9.31156, 7.84726, -9.31156, 10.0893, -6.77204, 10.0893, 10.1581 )
